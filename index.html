@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Calculator</title>
+</head>
+
+<body>
+  <h1>Math Calculator</h1>
+  <form>
+    <label for="option">Select an operation:</label>
+    <select name="option" id="option">
+      <option value="addition">Addition</option>
+      <option value="subtraction">Subtraction</option>
+      <option value="multiplication">Multiplication</option>
+      <option value="division">Division</option>
+      <option value="exit">Exit</option>
+    </select>
+    <br /><br />
+    <input type="button" value="Submit" onclick="navigate()" />
+  </form>
+
+  <script>
+    function navigate() {
+      var option = document.getElementById("option").value;
+      switch (option) {
+        case "addition":
+          window.location.href = "addition.html";
+          break;
+        case "subtraction":
+          window.location.href = "subtraction.html";
+          break;
+        case "multiplication":
+          window.location.href = "multiplication.html";
+          break;
+        case "division":
+          window.location.href = "division.html";
+          break;
+        case "exit":
+          window.location.href = "exit.html";
+          break;
+      }
+    }
+  </script>
+</body>
+
+</html>

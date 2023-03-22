@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Addition</title>
+	<style>
+		label {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		input[type=text] {
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			margin-bottom: 10px;
+		}
+
+		input[type=submit] {
+			padding: 5px 10px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Addition</h1>
+	<form action="">
+		<label for="num1">Enter number 1:</label>
+		<input type="text" id="num1" name="num1" placeholder="Enter a number">
+		<label for="num2">Enter number 2:</label>
+		<input type="text" id="num2" name="num2" placeholder="Enter a number">
+		<input type="submit" value="Calculate">
+	</form>
+	<p>Result: <span id="result"></span></p>
+	<script>
+		var num1 = parseFloat(getParameterByName('num1'));
+		var num2 = parseFloat(getParameterByName('num2'));
+		var result = num1 + num2;
+		document.getElementById('result').innerHTML = result;
+
+		function getParameterByName(name) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(location.search);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+	</script>
+</body>
+
+</html>
